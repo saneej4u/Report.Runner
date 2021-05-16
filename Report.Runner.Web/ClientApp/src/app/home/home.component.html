@@ -1,0 +1,26 @@
+
+<br />
+<br />
+
+<div class="row">
+  <div class="mb-3 col-md-4">
+    <h4 class="col-sm-4 col-form-label">Please select a template</h4>
+    <select class="form-select col-sm-10" [(ngModel)]="selectedType" (change)="onTemplateTypeChange()">
+      <option *ngFor="let templateType of templateType$ | async;" [value]="templateType.name">
+        {{ templateType.name}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<br />
+
+<table class="table table-bordered table-dark">
+  <tbody>
+    <tr *ngFor="let row of data">
+      <td *ngFor="let val of row">
+        {{val}}
+      </td>
+    </tr>
+  </tbody>
+</table>
